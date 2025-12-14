@@ -2,38 +2,34 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ShoppingCart, User, Menu, ChevronDown, Phone, Building2, Truck, Shield, GitCompareArrows } from "lucide-react"
+import { ShoppingCart, User, Menu, Phone, Truck, GitCompareArrows } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { useI18n } from "@/lib/i18n/context"
 import { useCompare } from "@/lib/compare-context"
 import { AdvancedSearch } from "@/components/search/advanced-search"
 import { SearchTrigger } from "@/components/search/search-trigger"
+import { MegaMenu } from "@/components/layout/mega-menu"
+import { Building2, Wrench, HardHat, FlameKindling, Layers } from "lucide-react"
 
 const categories = [
   { nameKey: "Cement", nameFA: "سیمان", href: "/category/cement", icon: Building2 },
-  { nameKey: "Tools", nameFA: "ابزارآلات", href: "/category/tools", icon: Building2 },
-  { nameKey: "Safety Gear", nameFA: "تجهیزات ایمنی", href: "/category/safety", icon: Shield },
-  { nameKey: "Firefighting", nameFA: "آتش‌نشانی", href: "/category/firefighting", icon: Shield },
-  { nameKey: "Building Materials", nameFA: "مصالح ساختمانی", href: "/category/materials", icon: Building2 },
+  { nameKey: "Tools", nameFA: "ابزارآلات", href: "/category/tools", icon: Wrench },
+  { nameKey: "Safety Gear", nameFA: "تجهیزات ایمنی", href: "/category/safety", icon: HardHat },
+  { nameKey: "Firefighting", nameFA: "آتش‌نشانی", href: "/category/firefighting", icon: FlameKindling },
+  { nameKey: "Building Materials", nameFA: "مصالح ساختمانی", href: "/category/materials", icon: Layers },
 ]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { t } = useI18n()
+  const { t, dir } = useI18n()
   const { items: compareItems } = useCompare()
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full" dir={dir}>
       {/* Top Bar */}
       <div className="bg-sidebar text-sidebar-foreground hidden sm:block">
         <div className="container mx-auto px-4">
@@ -49,7 +45,7 @@ export function Header() {
               </span>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/supplier" className="hover:text-accent transition-colors">
+              <Link href="/become-supplier" className="hover:text-accent transition-colors">
                 {t("nav.become_supplier")}
               </Link>
               <Link href="/help" className="hover:text-accent transition-colors hidden md:inline">
@@ -98,7 +94,7 @@ export function Header() {
           </div>
         </div>
       </nav>
-      
+
       {/* Main Header */}
       <div className="bg-card border-b border-border shadow-sm">
         <div className="container mx-auto px-3 sm:px-4">
@@ -110,9 +106,9 @@ export function Header() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[280px] sm:w-80">
+              <SheetContent side={dir === "rtl" ? "right" : "left"} className="w-[280px] sm:w-80">
                 <SheetHeader>
-                  <SheetTitle className="text-left">{t("nav.categories")}</SheetTitle>
+                  <SheetTitle className={dir === "rtl" ? "text-right" : "text-left"}>{t("nav.categories")}</SheetTitle>
                 </SheetHeader>
                 <nav className="mt-6 flex flex-col gap-2">
                   {categories.map((cat) => (
@@ -180,34 +176,9 @@ export function Header() {
             </Link>
 
             {/* Category Dropdown - Desktop */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild className="hidden lg:flex">
-                <Button variant="outline" className="gap-2 bg-transparent">
-                  <Menu className="h-4 w-4" />
-                  {t("nav.all_categories")}
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-64">
-                {categories.map((cat) => (
-                  <DropdownMenuItem key={cat.nameKey} asChild>
-                    <Link href={cat.href} className="flex items-center gap-3 cursor-pointer">
-                      <cat.icon className="h-4 w-4 text-primary" />
-                      <div>
-                        <div className="font-medium">{cat.nameKey}</div>
-                        <div className="text-xs text-muted-foreground">{cat.nameFA}</div>
-                      </div>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link href="/categories" className="text-primary font-medium cursor-pointer">
-                    {t("nav.view_all")} →
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="hidden lg:block">
+              <MegaMenu />
+            </div>
 
             <div className="flex-1 min-w-0 hidden sm:block">
               <AdvancedSearch />
