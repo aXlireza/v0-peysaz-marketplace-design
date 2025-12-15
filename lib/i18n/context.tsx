@@ -49,3 +49,5 @@ export function useI18n() {
   }
   return context
 }
+
+export const useLanguage = useI18n

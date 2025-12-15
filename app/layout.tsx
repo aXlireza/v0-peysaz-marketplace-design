@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { I18nProvider } from "@/lib/i18n/context"
 import { CompareProvider } from "@/lib/compare-context"
 import { CartProvider } from "@/lib/cart-context"
+import { Chatbot } from "@/components/chatbot/chatbot"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     "مصالح ساختمانی",
     "سیمان",
   ],
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export const viewport: Viewport = {
@@ -44,7 +45,10 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <I18nProvider>
           <CartProvider>
-            <CompareProvider>{children}</CompareProvider>
+            <CompareProvider>
+              {children}
+              <Chatbot />
+            </CompareProvider>
           </CartProvider>
         </I18nProvider>
         <Analytics />

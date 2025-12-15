@@ -191,6 +191,37 @@ export const translations: Record<Locale, Record<string, string>> = {
     "general.hours": "ساعت",
     "general.free_shipping": "ارسال رایگان",
     "general.free_shipping_over": "ارسال رایگان برای سفارش‌های بالای",
+
+    // Chatbot
+    "chatbot.assistant": "دستیار پیساز",
+    "chatbot.online": "آنلاین",
+    "chatbot.open": "باز کردن چت",
+    "chatbot.welcome": "سلام! به پیساز خوش آمدید 👋",
+    "chatbot.how_can_help": "چگونه می‌توانم به شما کمک کنم؟",
+    "chatbot.type_message": "پیام خود را بنویسید...",
+    "chatbot.powered_by": "پشتیبانی هوشمند با AI",
+    "chatbot.track_order": "پیگیری سفارش",
+    "chatbot.browse_products": "مشاهده محصولات",
+    "chatbot.cement_prices": "قیمت سیمان",
+    "chatbot.payment_help": "راهنمای پرداخت",
+    "chatbot.speak_agent": "تماس با پشتیبان",
+    "chatbot.faq": "سوالات متداول",
+    "chatbot.call_support": "تماس تلفنی",
+    "chatbot.track_response":
+      "لطفا شماره سفارش خود را وارد کنید تا وضعیت آن را بررسی کنم. شماره سفارش را در ایمیل تایید دریافت کرده‌اید.",
+    "chatbot.products_response":
+      "ما طیف گسترده‌ای از مصالح ساختمانی شامل سیمان، آهن‌آلات، ابزار و تجهیزات ایمنی داریم. به کدام دسته علاقه‌مندید؟",
+    "chatbot.cement_response":
+      "قیمت‌های سیمان هر هفته به‌روزرسانی می‌شوند. برای مشاهده آخرین قیمت‌ها از کارخانه‌های مختلف به صفحه قیمت سیمان مراجعه کنید.",
+    "chatbot.payment_response":
+      "ما روش‌های پرداخت متنوعی داریم: کارت به کارت، پرداخت آنلاین و اعتبار خرید برای مشتریان دائمی. کدام روش را ترجیح می‌دهید؟",
+    "chatbot.support_response":
+      "می‌توانید از طریق تلفن ۰۲۱-۱۲۳۴۵۶۷۸ یا واتساپ با پشتیبانی ما در تماس باشید. ساعات کاری: ۸ صبح تا ۸ شب.",
+    "chatbot.greeting": "سلام! چطور می‌توانم به شما کمک کنم؟",
+    "chatbot.help_response":
+      "می‌توانم در موارد زیر به شما کمک کنم:\n- پیگیری سفارش\n- اطلاعات محصولات\n- قیمت‌های روز سیمان\n- راهنمای پرداخت\n- تماس با پشتیبانی",
+    "chatbot.default_response": "متوجه نشدم. می‌توانید سوال خود را واضح‌تر بپرسید؟",
+    "chatbot.ask_help": "یا از دکمه‌های زیر برای دسترسی سریع استفاده کنید:",
   },
   en: {
     // Header
@@ -362,6 +393,37 @@ export const translations: Record<Locale, Record<string, string>> = {
     "general.hours": "hours",
     "general.free_shipping": "Free Shipping",
     "general.free_shipping_over": "Free shipping on orders over",
+
+    // Chatbot
+    "chatbot.assistant": "Peysaz Assistant",
+    "chatbot.online": "Online",
+    "chatbot.open": "Open chat",
+    "chatbot.welcome": "Hello! Welcome to Peysaz 👋",
+    "chatbot.how_can_help": "How can I help you today?",
+    "chatbot.type_message": "Type your message...",
+    "chatbot.powered_by": "AI-powered support",
+    "chatbot.track_order": "Track Order",
+    "chatbot.browse_products": "Browse Products",
+    "chatbot.cement_prices": "Cement Prices",
+    "chatbot.payment_help": "Payment Help",
+    "chatbot.speak_agent": "Speak to Agent",
+    "chatbot.faq": "FAQ",
+    "chatbot.call_support": "Call Support",
+    "chatbot.track_response":
+      "Please provide your order number so I can check its status. You received the order number in your confirmation email.",
+    "chatbot.products_response":
+      "We have a wide range of construction materials including cement, steel, tools, and safety equipment. Which category are you interested in?",
+    "chatbot.cement_response":
+      "Cement prices are updated weekly. Visit our Cement Prices page to see the latest prices from different factories.",
+    "chatbot.payment_response":
+      "We accept multiple payment methods: bank transfer, online payment, and credit line for regular customers. Which would you prefer?",
+    "chatbot.support_response":
+      "You can reach our support team at 021-12345678 or via WhatsApp. Working hours: 8 AM to 8 PM.",
+    "chatbot.greeting": "Hello! How can I assist you today?",
+    "chatbot.help_response":
+      "I can help you with:\n- Order tracking\n- Product information\n- Daily cement prices\n- Payment guidance\n- Contact support",
+    "chatbot.default_response": "I didn't understand that. Could you rephrase your question?",
+    "chatbot.ask_help": "Or use the buttons below for quick access:",
   },
   zh: {
     // Header
@@ -533,6 +595,31 @@ export const translations: Record<Locale, Record<string, string>> = {
     "general.hours": "小时",
     "general.free_shipping": "免运费",
     "general.free_shipping_over": "订单满额免运费",
+
+    // Chatbot
+    "chatbot.assistant": "Peysaz助手",
+    "chatbot.online": "在线",
+    "chatbot.open": "打开聊天",
+    "chatbot.welcome": "您好！欢迎来到Peysaz 👋",
+    "chatbot.how_can_help": "我能为您做什么？",
+    "chatbot.type_message": "输入您的消息...",
+    "chatbot.powered_by": "AI智能支持",
+    "chatbot.track_order": "跟踪订单",
+    "chatbot.browse_products": "浏览产品",
+    "chatbot.cement_prices": "水泥价格",
+    "chatbot.payment_help": "付款帮助",
+    "chatbot.speak_agent": "联系客服",
+    "chatbot.faq": "常见问题",
+    "chatbot.call_support": "电话支持",
+    "chatbot.track_response": "请提供您的订单号，我可以查询订单状态。您在确认邮件中收到了订单号。",
+    "chatbot.products_response": "我们提供广泛的建筑材料，包括水泥、钢材、工具和安全设备。您对哪个类别感兴趣？",
+    "chatbot.cement_response": "水泥价格每周更新。访问我们的水泥价格页面查看不同工厂的最新价格。",
+    "chatbot.payment_response": "我们接受多种付款方式：银行转账、在线支付和常规客户的信用额度。您更喜欢哪种？",
+    "chatbot.support_response": "您可以通过021-12345678或WhatsApp联系我们的支持团队。工作时间：上午8点至晚上8点。",
+    "chatbot.greeting": "您好！我能为您提供什么帮助？",
+    "chatbot.help_response": "我可以帮助您：\n- 跟踪订单\n- 产品信息\n- 每日水泥价格\n- 付款指导\n- 联系支持",
+    "chatbot.default_response": "我没有理解。您能换个说法吗？",
+    "chatbot.ask_help": "或使用下面的按钮快速访问：",
   },
 }
 
